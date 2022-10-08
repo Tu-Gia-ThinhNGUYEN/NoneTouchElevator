@@ -347,14 +347,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .logo img {
-  max-height: 50px;
+  max-width: 50px;
   margin-right: 6px;
 }
 .logo span {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #7c7c7c;
   font-family: "Nunito", sans-serif;
+  display: block!important;
 }
 
 .header {
@@ -1181,4 +1182,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 .imageContacts{
   width: 120px;
+}
+.floor-display{
+  font-family: "Subway Ticker";
+  src: url("./font/subway-ticker-webfont.woff2") format("woff2"), url("./font/subway-ticker-webfont.woff") format("woff");
+  position: absolute;
+  top: 22%;
+  left: 8%; 
+  color: darkorange; 
+  font-size: 4rem;
+  z-index: 100;
+  align-items: center;
 }

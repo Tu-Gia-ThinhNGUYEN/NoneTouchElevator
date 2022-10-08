@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>MECA__SPK-SALT</title>
+  <title>Elevator None Touch</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,6 +27,7 @@
   <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="https://allfont.net/allfont.css?fonts=subway-ticker" rel="stylesheet" type="text/css" />
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -81,12 +82,6 @@
 
         </li><!-- End Notification Nav -->
         <li class="nav-item dropdown pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="./img/GiaThinh.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">admin</span>
-          </a><!-- End Profile Iamge Icon -->
-
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6>Gia Thinh</h6>
@@ -146,19 +141,52 @@
                 <div class="card-body">
                   <h5 class="card-title">Outside<span>| Control Panel</span></h5>
                   <div class="row">
-                    <div class="col" style="position: relative;">
-                      <img src="./img/web_floor_display.svg" alt="" style="height: 18rem; position: absolute; left: 20%;">
+                    <div class="col justify-content-center" style="position: relative;">
+                      <div class="" style="height: 18rem; width: 10rem; position: relative; left: 20%; align-items: center;">
+                        <img src="./img/web_floor_display.svg" alt="" style="height: 18rem; position: absolute; left: 0%;">
+                        <img src="./img/web_updisplay.svg" alt="" style="height: 2rem; position: absolute; left: 20%; top: 5%; z-index: 100; display: none;">
+                        <img src="./img/web_downdisplay.svg" alt="" style="height: 2rem; position: absolute; left: 20%; top: 53%; z-index: 100; display: none;">
+                        <h5 class="floor-display" style="font-family: 'Subway Ticker', arial;">3B</h5>
+                      </div>
                     </div>
                     <div class="col-4">
-                      <div style="line-height: 3.5rem;"> <br> </div>
-                      <div class="row-4">
-                        <img src="./img/web_up_normal.svg" alt="" style="height: 5rem;">
+                      <div class="row-lg justify-content-center">
+                        <div class="col-4" style="height: 9rem; position: relative; top: 0; left: 0;">
+                          <img src="./img/web_up_normal.svg" alt="" style="position: absolute; left: 0%; top: 3.5rem; height: 5rem;" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                          <img src="./img/web_up_clicked.svg" alt="" style="position: absolute; left: 0%; top: 3.5rem; height: 5rem; display: none;">
+                        </div>
                       </div>
-                      <div style="line-height: 1rem;"> <br> </div>
-                      <div class="row-4">
-                        <img src="./img/web_down_normal.svg" alt="" style="height: 5rem;">
+                      <div class="row-lg justify-content-center">
+                        <div class="col-4" style="height: 9rem; position: relative; left: 0%; top: 0;">
+                          <img src="./img/web_down_normal.svg" alt="" style="position: absolute; left: 0%; top: 1rem; height: 5rem;" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                          <img src="./img/web_down_clicked.svg" alt="" style="position: absolute; left: 0%; top: 1rem; height: 5rem; display: none;">
+                        </div>
                       </div>
-                      <div style="line-height: 3.5rem;"> <br> </div>
+                      <!-- Modal -->
+                      <div class="modal fade" id="verticalycentered" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Verify action</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <span>Please enter the code displayed on the screen next to the elevator button.</span>
+                              <br>
+                              <div class="row align-items-center justify-content-center">
+
+                                <img src="./img/web_displayHMIview.jpg" alt="" style="max-width: 350px;">
+                              </div>
+                              <div style="line-height: 1rem;"><br></div>
+                              <input type="number" placeholder="Verify code" class="form-control" style="align-items: center;">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                              <button type="button" class="btn btn-danger">Apply</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div><!-- End Modal-->
                     </div>
                   </div>
                 </div>
@@ -174,14 +202,14 @@
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
                       <img src="./img/web_Cabin_3A_normal.svg" alt="" class="Cabin-button-3A-normal"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;">
+                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
                       <img src="./img/web_Cabin_3A_clicked.svg" alt="" class="Cabin-button-3A-clicked"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
                       <img src="./img/web_Cabin_3B_normal.svg" alt="" class="Cabin-button-3B-normal"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;">
+                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
                       <img src="./img/web_Cabin_3B_clicked.svg" alt="" class="Cabin-button-3B-clicked"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
@@ -192,16 +220,16 @@
                   <div class="row justify-content-center">
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
-                      <img src="./img/web_Cabin_2_normal.svg" alt="" class="Cabin-button-2-normal"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;">
-                      <img src="./img/web_Cabin_2_clicked.svg" alt="" class="Cabin-button-2-cliked"
+                      <img src="./img/web_Cabin_G_normal.svg" alt="" class="Cabin-button-2-normal"
+                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
+                      <img src="./img/web_Cabin_G_clicked.svg" alt="" class="Cabin-button-2-cliked"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
-                      <img src="./img/web_Cabin_G_normal.svg" alt="" class="Cabin-button-G-normal"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;">
-                      <img src="./img/web_Cabin_G_clicked.svg" alt="" class="Cabin-button-G-clicked"
+                      <img src="./img/web_Cabin_2_normal.svg" alt="" class="Cabin-button-G-normal"
+                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
+                      <img src="./img/web_Cabin_2_clicked.svg" alt="" class="Cabin-button-G-clicked"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
                     <div style="line-height: 1rem;"><br></div>
@@ -212,20 +240,45 @@
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
                       <img src="./img/web_Cabin_open_normal.svg" alt="" class="Cabin-button-open-normal"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;">
+                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
                       <img src="./img/web_Cabin_open_clicked.svg" alt="" class="Cabin-button-open-clicked"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
                       <img src="./img/web_Cabin_close_normal.svg" alt="" class="Cabin-button-close-normal"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;">
+                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
                       <img src="./img/web_Cabin_close_clicked.svg" alt="" class="Cabin-button-close-clicked"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
                     <div style="line-height: 1rem;"><br></div>
                   </div>
                   <!-- End of Cabin button row 3 -->
+                  <!-- Modal -->
+                  <div class="modal fade" id="verticalycentered-cabin" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Verify action</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <span>Please enter the code displayed on the screen next to the cabin button panel.</span>
+                          <br>
+                          <div class="row align-items-center justify-content-center">
+
+                            <img src="./img/web_displayHMIview.jpg" alt="" style="max-width: 350px;">
+                          </div>
+                          <div style="line-height: 1rem;"><br></div>
+                          <input type="number" placeholder="Verify code" class="form-control" style="align-items: center;">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-danger">Apply</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- End Modal-->
                 </div>
               </div>
             </div><!-- End Inside Cabin -->
@@ -247,50 +300,58 @@
       <div class="row">
         <!-- Left side columns -->
         <div class="col-lg">
-          <div class="row">
-            <!-- Outside -->
-            <div class="col-lg">
-              <div class="card recent-sales overflow-auto">
-                <div class="card-body">
-                  <h5 class="card-title">Outside<span>| Control Panel</span></h5>
-                  <!-- Up button row -->
-                  <div class="row justify-content-center align-items-center">
-                    <div style="line-height: 3.5rem;"><br></div>
-                    <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
-                      style="height: 5rem; position: relative; top: 0; left: 0;">
-                      <img src="./img/web_up_normal.svg" alt="" class="Cabin-button-3A-normal"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;">
-                      <img src="./img/web_up_clicked.svg" alt="" class="Cabin-button-3A-clicked"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
-                    </div>
-                    <div style="line-height: 1rem;"><br></div>
-                  </div>
-                  <!-- End of Up button row -->
-                  <!-- Down button row -->
-                  <div class="row justify-content-center align-items-center">
-                    <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
-                      style="height: 5rem; position: relative; top: 0; left: 0;">
-                      <img src="./img/web_down_normal.svg" alt="" class="Cabin-button-G-normal"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;">
-                      <img src="./img/web_down_clicked.svg" alt="" class="Cabin-button-G-clicked"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
-                    </div>
-                    <div style="line-height: 3.5rem;"><br></div>
-                  </div>
-                  <!-- End of Down button row -->
+          <div class="row justify-content-center">
+            <!-- Info of Instructor -->
+            <div class="card col-md-5">
+              <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                <img src="./img/ThayPhong.jpg" alt="Profile" class="rounded-circle imageContacts">
+                <h2 class="nameContacts intructorContact">PhD. Van-Phong VU</h2>
+                <h3 class="jobContacts intructorContact">Instructor - Project Manager</h3>
+                <div class="social-links mt-2">
+                  <a href="https://www.facebook.com/vu.phong.127" class="facebook"><i class="bi bi-facebook"></i> Vu Phong</a>
+                  <br>
+                  <a href="tel:+84981479507" class="linkedin"><i class=" bi bi-telephone-fill"></i> +84981479507</a>
+                  <br>
+                  <a href="https://www.google.com/intl/vi/gmail/about/" class="gmail"><i class="bx bx-mail-send"></i> phongvv@hcmute.edu.vn</a>
                 </div>
               </div>
-            </div><!-- Outside -->
+            </div>
+            <!-- End of Info Instructor -->
+            <div class="col-sm-1"></div>
+            <!-- Info of me -->
+            <div class="card col-md-5">
+              <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                <img src="./img/GiaThinh.jpg" alt="Profile" class="rounded-circle imageContacts">
+                <h2 class="nameContacts">Tu-Gia-Thinh NGUYEN</h2>
+                <h3 class="jobContacts">Full Stack Developer</h3>
+                <div class="social-links mt-2">
+                  <a href="https://www.facebook.com/NguyenTuGiaThinh/" class="facebook"><i class="bi bi-facebook"></i> Nguyen Tu Gia Thinh</a>
+                  <br>
+                  <a href="tel:+84363861908" class="linkedin"><i class=" bi bi-telephone-fill"></i> +84363861908</a>
+                  <br>
+                  <a href="https://www.google.com/intl/vi/gmail/about/" class="gmail"><i class="bx bx-mail-send"></i> 19151041@student.hcmute.edu.vn</a>
+                </div>
+              </div>
+            </div>
+            <!-- End of Info me -->
           </div>
         </div>
       </div>
     </section>
+    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert" style="display: none; position: fixed; right: 0%; bottom: 62px; z-index: 10000; width: 259.19px;">
+      <span>The action was successful!</span>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert" style="display: none; position: fixed; right: 0%; bottom: 62px; z-index: 10000; width: 259.19px;">
+      <span>The action was fail!</span>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>SPK-Salt</span></strong>.
+      &copy; Copyright <strong><span>ACIS Lab</span></strong>.
     </div>
     <div class="credits">
       Designed by <a href="https://www.facebook.com/NguyenTuGiaThinh/">Nguyen Tu Gia Thinh</a>
