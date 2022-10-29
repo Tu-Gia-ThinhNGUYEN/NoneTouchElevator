@@ -667,6 +667,9 @@ h1, h2, h3, h4, h5, h6 {
 # Dashboard
 --------------------------------------------------------------*/
 /* Filter dropdown */
+.elevator-button:hover{
+  opacity: 0.8;
+}
 .dashboard .filter {
   position: absolute;
   right: 20px;
