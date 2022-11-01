@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
   <title>Elevator None Touch</title>
   <meta content="" name="description">
@@ -34,8 +35,9 @@
 
 </head>
 
-<body onload="onloadFunction()">
+<!-- <body onload="onloadFunction()"> -->
 
+<body>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
@@ -140,26 +142,43 @@
               <div class="card recent-sales overflow-auto">
                 <div class="card-body">
                   <h5 class="card-title">Outside<span>| Control Panel</span></h5>
+                  <span>Your current floor:</span>
+                  <select name="" class="dataTable-selector outside-floor-selector" id="">
+                    <option value="G">G</option>
+                    <option value="2">2</option>
+                    <option value="3A">3A</option>
+                    <option value="3B">3B</option>
+                  </select>
                   <div class="row">
                     <div class="col justify-content-center" style="position: relative;">
-                      <div class="" style="height: 18rem; width: 10rem; position: relative; left: 20%; align-items: center;">
-                        <img src="./img/web_floor_display.svg" alt="" style="height: 18rem; position: absolute; left: 0%;">
-                        <img src="./img/web_updisplay.svg" class="outside-up-display" alt="" style="height: 2rem; position: absolute; left: 20%; top: 5%; z-index: 100; display: none;">
-                        <img src="./img/web_downdisplay.svg" class="outside-down-display" alt="" style="height: 2rem; position: absolute; left: 20%; top: 53%; z-index: 100; display: none;">
+                      <div class=""
+                        style="height: 18rem; width: 10rem; position: relative; left: 20%; align-items: center;">
+                        <img src="./img/web_floor_display.svg" alt=""
+                          style="height: 18rem; position: absolute; left: 0%;">
+                        <img src="./img/web_updisplay.svg" class="outside-up-display" alt=""
+                          style="height: 2rem; position: absolute; left: 20%; top: 5%; z-index: 100; display: none;">
+                        <img src="./img/web_downdisplay.svg" class="outside-down-display" alt=""
+                          style="height: 2rem; position: absolute; left: 20%; top: 53%; z-index: 100; display: none;">
                         <h5 class="floor-display" style="font-family: 'Subway Ticker', arial;">3B</h5>
                       </div>
                     </div>
                     <div class="col-4">
                       <div class="row-lg justify-content-center">
                         <div class="col-4" style="height: 9rem; position: relative; top: 0; left: 0;">
-                          <img src="./img/web_up_normal.svg" class="outside-button-up-normal elevator-button" alt="" style="position: absolute; left: 0%; top: 3.5rem; height: 5rem;" data-bs-toggle="modal" data-bs-target="#verticalycentered">
-                          <img src="./img/web_up_clicked.svg" class="outside-button-up-clicked elevator-button" alt="" style="position: absolute; left: 0%; top: 3.5rem; height: 5rem; display: none;">
+                          <img src="./img/web_up_normal.svg" class="outside-button-up-normal elevator-button" alt=""
+                            style="position: absolute; left: 0%; top: 3.5rem; height: 5rem;" data-bs-toggle="modal"
+                            data-bs-target="#verticalycentered">
+                          <img src="./img/web_up_clicked.svg" class="outside-button-up-clicked elevator-button" alt=""
+                            style="position: absolute; left: 0%; top: 3.5rem; height: 5rem; display: none;">
                         </div>
                       </div>
                       <div class="row-lg justify-content-center">
                         <div class="col-4" style="height: 9rem; position: relative; left: 0%; top: 0;">
-                          <img src="./img/web_down_normal.svg" class="outside-button-down-normal elevator-button" alt="" style="position: absolute; left: 0%; top: 1rem; height: 5rem;" data-bs-toggle="modal" data-bs-target="#verticalycentered">
-                          <img src="./img/web_down_clicked.svg" class="outside-button-down-clicked elevator-button" alt="" style="position: absolute; left: 0%; top: 1rem; height: 5rem; display: none;">
+                          <img src="./img/web_down_normal.svg" class="outside-button-down-normal elevator-button" alt=""
+                            style="position: absolute; left: 0%; top: 1rem; height: 5rem;" data-bs-toggle="modal"
+                            data-bs-target="#verticalycentered">
+                          <img src="./img/web_down_clicked.svg" class="outside-button-down-clicked elevator-button"
+                            alt="" style="position: absolute; left: 0%; top: 1rem; height: 5rem; display: none;">
                         </div>
                       </div>
                       <!-- Modal -->
@@ -168,7 +187,8 @@
                           <div class="modal-content">
                             <div class="modal-header">
                               <h5 class="modal-title">Verify action</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                               <span>Please enter the code displayed on the screen next to the elevator button.</span>
@@ -178,7 +198,8 @@
                                 <img src="./img/web_displayHMIview.jpg" alt="" style="max-width: 350px;">
                               </div>
                               <div style="line-height: 1rem;"><br></div>
-                              <input type="number" placeholder="Verify code" class="form-control" style="align-items: center;">
+                              <input type="number" placeholder="Verify code" class="form-control"
+                                style="align-items: center;">
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -202,14 +223,16 @@
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
                       <img src="./img/web_Cabin_3A_normal.svg" alt="" class="Cabin-button-3A-normal elevator-button"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
+                        style="height: 5rem; position: absolute; top: 0; left: 30%; display: block;"
+                        data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
                       <img src="./img/web_Cabin_3A_clicked.svg" alt="" class="Cabin-button-3A-clicked elevator-button"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
                       <img src="./img/web_Cabin_3B_normal.svg" alt="" class="Cabin-button-3B-normal elevator-button"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
+                        style="height: 5rem; position: absolute; top: 0; left: 30%; display: block;"
+                        data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
                       <img src="./img/web_Cabin_3B_clicked.svg" alt="" class="Cabin-button-3B-clicked elevator-button"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
@@ -221,14 +244,16 @@
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
                       <img src="./img/web_Cabin_G_normal.svg" alt="" class="Cabin-button-G-normal elevator-button"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
-                      <img src="./img/web_Cabin_G_clicked.svg" alt="" class="Cabin-button-G-cliked elevator-button"
+                        style="height: 5rem; position: absolute; top: 0; left: 30%; display: block;"
+                        data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
+                      <img src="./img/web_Cabin_G_clicked.svg" alt="" class="Cabin-button-G-clicked elevator-button"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
                       <img src="./img/web_Cabin_2_normal.svg" alt="" class="Cabin-button-2-normal elevator-button"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
+                        style="height: 5rem; position: absolute; top: 0; left: 30%; display: block;"
+                        data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
                       <img src="./img/web_Cabin_2_clicked.svg" alt="" class="Cabin-button-2-clicked elevator-button"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
@@ -240,15 +265,20 @@
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
                       <img src="./img/web_Cabin_open_normal.svg" alt="" class="Cabin-button-open-normal elevator-button"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
-                      <img src="./img/web_Cabin_open_clicked.svg" alt="" class="Cabin-button-open-clicked elevator-button"
+                        style="height: 5rem; position: absolute; top: 0; left: 30%; display: block;"
+                        data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
+                      <img src="./img/web_Cabin_open_clicked.svg" alt=""
+                        class="Cabin-button-open-clicked elevator-button"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
                       style="height: 5rem; position: relative; top: 0; left: 0;">
-                      <img src="./img/web_Cabin_close_normal.svg" alt="" class="Cabin-button-close-normal elevator-button"
-                        style="height: 5rem; position: absolute; top: 0; left: 30%;" data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
-                      <img src="./img/web_Cabin_close_clicked.svg" alt="" class="Cabin-button-close-clicked elevator-button"
+                      <img src="./img/web_Cabin_close_normal.svg" alt=""
+                        class="Cabin-button-close-normal elevator-button"
+                        style="height: 5rem; position: absolute; top: 0; left: 30%; display: block;"
+                        data-bs-toggle="modal" data-bs-target="#verticalycentered-cabin">
+                      <img src="./img/web_Cabin_close_clicked.svg" alt=""
+                        class="Cabin-button-close-clicked elevator-button"
                         style="height: 5rem; position: absolute; top: 0; left: 30%; display: none;">
                     </div>
                     <div style="line-height: 1rem;"><br></div>
@@ -270,7 +300,8 @@
                             <img src="./img/web_displayHMIview.jpg" alt="" style="max-width: 350px;">
                           </div>
                           <div style="line-height: 1rem;"><br></div>
-                          <input type="number" placeholder="Verify code" class="form-control" style="align-items: center;">
+                          <input type="number" placeholder="Verify code" class="form-control"
+                            style="align-items: center;">
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -308,11 +339,13 @@
                 <h2 class="nameContacts intructorContact">PhD. Van-Phong VU</h2>
                 <h3 class="jobContacts intructorContact">Instructor - Project Manager</h3>
                 <div class="social-links mt-2">
-                  <a href="https://www.facebook.com/vu.phong.127" class="facebook"><i class="bi bi-facebook"></i> Vu Phong</a>
+                  <a href="https://www.facebook.com/vu.phong.127" class="facebook"><i class="bi bi-facebook"></i> Vu
+                    Phong</a>
                   <br>
                   <a href="tel:+84981479507" class="linkedin"><i class=" bi bi-telephone-fill"></i> +84981479507</a>
                   <br>
-                  <a href="https://www.google.com/intl/vi/gmail/about/" class="gmail"><i class="bx bx-mail-send"></i> phongvv@hcmute.edu.vn</a>
+                  <a href="https://www.google.com/intl/vi/gmail/about/" class="gmail"><i class="bx bx-mail-send"></i>
+                    phongvv@hcmute.edu.vn</a>
                 </div>
               </div>
             </div>
@@ -325,11 +358,13 @@
                 <h2 class="nameContacts">Tu-Gia-Thinh NGUYEN</h2>
                 <h3 class="jobContacts">Full Stack Developer</h3>
                 <div class="social-links mt-2">
-                  <a href="https://www.facebook.com/NguyenTuGiaThinh/" class="facebook"><i class="bi bi-facebook"></i> Nguyen Tu Gia Thinh</a>
+                  <a href="https://www.facebook.com/NguyenTuGiaThinh/" class="facebook"><i class="bi bi-facebook"></i>
+                    Nguyen Tu Gia Thinh</a>
                   <br>
                   <a href="tel:+84363861908" class="linkedin"><i class=" bi bi-telephone-fill"></i> +84363861908</a>
                   <br>
-                  <a href="https://www.google.com/intl/vi/gmail/about/" class="gmail"><i class="bx bx-mail-send"></i> 19151041@student.hcmute.edu.vn</a>
+                  <a href="https://www.google.com/intl/vi/gmail/about/" class="gmail"><i class="bx bx-mail-send"></i>
+                    19151041@student.hcmute.edu.vn</a>
                 </div>
               </div>
             </div>
@@ -338,11 +373,13 @@
         </div>
       </div>
     </section>
-    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert" style="display: none; position: fixed; right: 0%; bottom: 62px; z-index: 10000; width: 259.19px;">
+    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert"
+      style="display: none; position: fixed; right: 0%; bottom: 62px; z-index: 10000; width: 259.19px;">
       <span>The action was successful!</span>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert" style="display: none; position: fixed; right: 0%; bottom: 62px; z-index: 10000; width: 259.19px;">
+    <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert"
+      style="display: none; position: fixed; right: 0%; bottom: 62px; z-index: 10000; width: 259.19px;">
       <span>The action was fail!</span>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -376,46 +413,441 @@
 
   <!---------------------------------------------------------------------------------------------- FIREBASE CONFIGURATION  ------------------------------------------------------------->
   <script type="module">
+    /*
     // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBgTphmEWTWoJ-5-j0R9jF4Z4dENtnr2xQ",
+      authDomain: "elevatornonetouch.firebaseapp.com",
+      databaseURL: "https://elevatornonetouch-default-rtdb.firebaseio.com",
+      projectId: "elevatornonetouch",
+      storageBucket: "elevatornonetouch.appspot.com",
+      messagingSenderId: "441651373398",
+      appId: "1:441651373398:web:1abe6281fb31338bad62f7",
+      measurementId: "G-KZ0F1G8CEN"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  
+      import { getDatabase, ref, set, get, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+  
+      const db = getDatabase();
+      //------------------------------------------------------------------------------------------------REFERENCES----------------------------------------------------------------
+      //Normal button
+      const btnNormalUp = document.querySelector('.outside-button-up-normal');
+      const btnNormalDown = document.querySelector('.outside-button-down-normal');
+      const btnNormal3B = document.querySelector('.Cabin-button-3B-normal');
+      const btnNormal3A = document.querySelector('.Cabin-button-3A-normal');
+      const btnNormal2 = document.querySelector('.Cabin-button-2-normal');
+      const btnNormalG = document.querySelector('.Cabin-button-G-normal');
+      const btnNormalClose = document.querySelector('.Cabin-button-close-normal');
+      const btnNormalOpen = document.querySelector('.Cabin-button-open-normal');
+      // Clicked button
+      const btnClickedUp = document.querySelector('.outside-button-up-clicked');
+      const btnClickedDown = document.querySelector('.outside-button-down-clicked');
+      const btnClicked3B = document.querySelector('.Cabin-button-3B-clicked');
+      const btnClicked3A = document.querySelector('.Cabin-button-3A-clicked');
+      const btnClicked2 = document.querySelector('.Cabin-button-2-clicked');
+      const btnClickedG = document.querySelector('.Cabin-button-G-clicked');
+      const btnClickedClose = document.querySelector('.Cabin-button-close-clicked');
+      const btnClickedOpen = document.querySelector('.Cabin-button-open-clicked');
+      // Display
+      const displayUp = document.querySelector('.outside-up-display');
+      const displayDown = document.querySelector('.outside-down-display');
+      const displayFloor = document.querySelector('.floor-display');
+      
+      var isOn; //true is ON
+      var isOff; //false is OFF
+      var isAuto; //true is AUTO
+      var isManual; //true is MANUAL
+      var statusClick; //true is Enable to click
+      var cabinDirectDown; //true is moving down action of cabin
+      var cabinDirectUp; //true is moving up action of cabin
+      var currentFloor;
+      var is2down; //true is Floor 2 call down
+      var is2requested; //true is people inside cabin call floor 2
+      var is2up; //true is Floor 2 call up
+      var is3Adown; //true is Floor 3A call down
+      var is3Arequested; //true is people inside cabin call floor 2
+      var is3Aup; //true is Floor 3A call up
+      var is3Bdown; //true is Floor 3B call down
+      var is3Brequested; //true is people inside cabin call floor 3B
+      var isCloseRequested; //true is people inside cabin call close door
+      var isGrequested; //true is people inside cabin call floor G
+      var isGup; //true is Floor G call up
+      var isOpenRequested; //true is people inside cabin call open door
+  
+      //------------------------------------------------------------------------------------------------INSERT DATA FUNCTION--------------------------------
+      function InsertData() {
+        set(ref(db, "System/"), {
+          isOn: false, //true is ON false is OFF
+          isManual: false, //true is MANUAL false is AUTO
+          isImport: false, //true is IMPORT false is EXPORT
+          loadedA1: false, //true is LOADED false is FREE
+          loadedA2: false, //true is LOADED false is FREE
+          loadedA3: false, //true is LOADED false is FREE
+          loadedA4: false, //true is LOADED false is FREE
+          loadedA5: false, //true is LOADED false is FREE
+          loadedA6: false, //true is LOADED false is FREE
+          loadedA7: false, //true is LOADED false is FREE
+          loadedA8: false, //true is LOADED false is FREE
+          loadedA9: false, //true is LOADED false is FREE
+  
+          loadedB1: false, //true is LOADED false is FREE
+          loadedB2: false, //true is LOADED false is FREE
+          loadedB3: false, //true is LOADED false is FREE
+          loadedB4: false, //true is LOADED false is FREE
+          loadedB5: false, //true is LOADED false is FREE
+          loadedB6: false, //true is LOADED false is FREE
+          loadedB7: false, //true is LOADED false is FREE
+          loadedB8: false, //true is LOADED false is FREE
+          loadedB9: false, //true is LOADED false is FREE
+        })
+          .then(() => {
+            alert("data stored successfully");
+          })
+          .catch((error) => {
+            alert("unsuccessfull, error" + error)
+          });
+      }
+      //-----------------------------------------------------------------------------------SELECT DATA FUNCTION--------------------------------
+      function SelectData() {
+        const dbref = ref(db);
+  
+        get(child(dbref, "System/")).then((snapshot) => {
+          if (snapshot.exists()) {
+            var isOn = snapshot.val().TurnOn;
+          }
+          else {
+            alert("No data found");
+          }
+        })
+          .catch((error) => {
+            alert("unsuccessfull, error" + error);
+          });
+      }
+      //-----------------------------------------------------------------------------------UPDATE DATA FUNCTION--------------------------------
+      function UpdateData() {
+        update(ref(db, "System/"), {
+          isOn: true
+        })
+          .then(() => {
+            alert("Data updated successfully");
+          })
+          .catch((error) => {
+            alert("Unsuccessfull, error" + error)
+          });
+      }
+      //-----------------------------------------------------------------------------------DELETE DATA FUNCTION--------------------------------
+      function DeleteData() {
+        remove(ref(db, "System/"), {
+          TurnOn: true
+        })
+          .then(() => {
+            alert("Data removed successfully");
+          })
+          .catch((error) => {
+            alert("Unsuccessfull, error" + error)
+          });
+      }
+      //-----------------------------------------------------------------------------------CHANGE BUTTON--------------------------------
+      function change3BButton() {
+        if (!!+is3Brequested){
+          btnNormal3B.style.display = "none";
+          btnClicked3B.style.display = "block";
+        } else{
+          btnNormal3B.style.display = "block";
+          btnClicked3B.style.display = "none";
+        }
+      }
+      function change3AButton() {
+        if (!!+is3Arequested){
+          btnNormal3A.style.display = "none";
+          btnClicked3A.style.display = "block";
+        } else{
+          btnNormal3A.style.display = "block";
+          btnClicked3A.style.display = "none";
+        }
+      }
+      function change2Button() {
+        if (!!+is2requested){
+          btnNormal2.style.display = "none";
+          btnClicked2.style.display = "block";
+        } else{
+          btnNormal2.style.display = "block";
+          btnClicked2.style.display = "none";
+        }
+      }
+      function changeGButon() {
+        if (!!+isGrequested){
+          btnNormalG.style.display = "none";
+          btnClickedG.style.display = "block";
+        } else{
+          btnNormalG.style.display = "block";
+          btnClickedG.style.display = "none";
+        }
+      }
+      function changeCloseDoorButton() {
+        if (!!+isCloseRequested) {
+          btnNormalClose.style.display = "none";
+          btnClickedClose.style.display = "block";
+        } else {
+          btnNormalClose.style.display = "block";
+          btnClickedClose.style.display = "none";
+        }
+      }
+      function changeOpenDoorButton() {
+        if (!!+isOpenRequested) {
+          btnNormalOpen.style.display = "none";
+          btnClickedOpen.style.display = "block";
+        } else {
+          btnNormalOpen.style.display = "block";
+          btnClickedOpen.style.display = "none";
+        }
+      }
+      //-----------------------------------------------------------------------------------MY FUNCTION--------------------------------
+  
+      function UpdateIsOn() {
+        if (!(!!+isOn) && (!!+isOff)) {
+          update(ref(db, "System/"), {
+            statusClick: "1",
+            isOn: "1",
+            isOff: "0",
+          })
+            .then(() => {
+              alert("Data updated successfully");
+            })
+            .catch((error) => {
+              alert("Unsuccessfull, error" + error)
+            });
+        }
+        else if ((!!+isOn) && !(!!+isOff)) {
+          update(ref(db, "System/"), {
+            statusClick: "1",
+            isOn: "0",
+            isOff: "1",
+          })
+            .then(() => {
+              alert("Data updated successfully");
+            })
+            .catch((error) => {
+              alert("Unsuccessfull, error" + error)
+            });
+        }
+      }
+      function UpdateIsManual() {
+        if (!(!!+isAuto) && (!!+isManual)) {
+          update(ref(db, "System/"), {
+            statusClick: "1",
+            isAuto: "1",
+            isManual: "0",
+          })
+            .then(() => {
+              alert("Data updated successfully");
+            })
+            .catch((error) => {
+              alert("Unsuccessfull, error" + error)
+            });
+        }
+        else if ((!!+isAuto) && !(!!+isManual)) {
+          update(ref(db, "System/"), {
+            statusClick: "1",
+            isAuto: "0",
+            isManual: "1",
+          })
+            .then(() => {
+              alert("Data updated successfully");
+            })
+            .catch((error) => {
+              alert("Unsuccessfull, error" + error)
+            });
+        }
+      }
+      function UpdateIsImport() {
+        if (!(!!+isImport) && (!!+isExport)) {
+          update(ref(db, "System/"), {
+            statusClick: "1",
+            isImport: "1",
+            isExport: "0",
+          })
+            .then(() => {
+              alert("Data updated successfully");
+            })
+            .catch((error) => {
+              alert("Unsuccessfull, error" + error)
+            });
+        }
+        else if ((!!+isImport) && !(!!+isExport)) {
+          update(ref(db, "System/"), {
+            statusClick: "1",
+            isImport: "0",
+            isExport: "1",
+          })
+            .then(() => {
+              alert("Data updated successfully");
+            })
+            .catch((error) => {
+              alert("Unsuccessfull, error" + error)
+            });
+        }
+      }
+      function onloadFunction() {
+        var chartLoaded = 0;
+        var chartFree = 18;
+        var chartExpired = 0;
+        for (var i = 0; i < 18; i++) {
+          if (!!+loadedPositions[i]) {
+            chartLoaded++;
+            chartFree = 18 - chartLoaded;
+          }
+        }
+        chartChangeValue(chartLoaded, chartFree, chartExpired);
+      }
+      //-----------------------------------------------------------------------------------READ DATA--------------------------------
+      const SystemRef = ref(db, 'System/');
+  
+      onValue(SystemRef, (snapshot) => {
+        isOn = snapshot.val().isOn;
+        isOff = snapshot.val().isOff;
+        isAuto = snapshot.val().isAuto;
+        isManual = snapshot.val().isManual;
+        isImport = snapshot.val().isImport;
+        isExport = snapshot.val().isExport;
+        statusClick = snapshot.val().statusClick;
+        cabinDirectDown = snapshot.val().cabinDirectDown; //true is moving down action of cabin
+        cabinDirectUp = snapshot.val().cabinDirectUp; //true is moving up action of cabin
+        currentFloor = snapshot.val().currentFloor;
+        is2down = snapshot.val().is2down; //true is Floor 2 call down
+        is2requested = snapshot.val().is2requested; //true is people inside cabin call floor 2
+        is2up = snapshot.val().is2up; //true is Floor 2 call up
+        is3Adown = snapshot.val().is3Adown; //true is Floor 3A call down
+        is3Arequested = snapshot.val().is3Arequested; //true is people inside cabin call floor 2
+        is3Aup = snapshot.val().is3Aup; //true is Floor 3A call up
+        is3Bdown = snapshot.val().is3Bdown; //true is Floor 3B call down
+        is3Brequested = snapshot.val().is3Brequested; //true is people inside cabin call floor 3B
+        isCloseRequested = snapshot.val().isCloseRequested; //true is people inside cabin call close door
+        isGrequested = snapshot.val().isGrequested; //true is people inside cabin call floor G
+        isGup = snapshot.val().isGup; //true is Floor G call up
+        isOpenRequested = snapshot.val().isOpenRequested; //true is people inside cabin call open door
+        change3BButton();
+        change3AButton();
+        change2Button();
+        changeGButon();
+        changeCloseDoorButton();
+        changeOpenDoorButton();
+      });
+  
+      // const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      // const d = new Date();
+      // function GetAllDataOnce() {
+      //   const WarehouseRef = ref(db, 'Warehouse/2022/May/12/');
+      //   var dataWarehouse;
+      //   get(child(WarehouseRef)).then((snapshot)=>{
+      //     var warehouse = [];
+  
+      //     snapshot.forEach((childSnapshot)=>{
+      //       warehouse.push(childSnapshot.val());
+      //     });
+      //   });
+      // }
+      //window.onload = GetAllDataOnce;
+      //-----------------------------------------------------------------------------------Assign Events--------------------------------
+      btnTurnOnOff.addEventListener('click', UpdateIsOn);
+      btnControlMode.addEventListener('click', UpdateIsManual);
+      btnOperationMode.addEventListener('click', UpdateIsImport);
+      for (var i = 0; i < 9; i++) {
+        boxPositions[i].addEventListener('click', () => {
+          modalPosition.textContent = "A" + String(i + 1);
+          if (!!+loadedPositions[i]) {
+            modalBarcode.textContent = barcodePositions[i];
+            modalProduct.textContent = "None";
+            modalTimeImport.textContent = "None";
+          } else {
+            modalBarcode.textContent = "None";
+            modalProduct.textContent = "None";
+            modalTimeImport.textContent = "None";
+          }
+        });
+      }
+      for (var i = 9; i < 17; i++) {
+        boxPositions[i].addEventListener('click', () => {
+          modalPosition.textContent = "B" + String(i - 8);
+          if (!!+loadedPositions[i]) {
+            modalBarcode.textContent = barcodePositions[i];
+            modalProduct.textContent = "None";
+            modalTimeImport.textContent = "None";
+          } else {
+            modalBarcode.textContent = "None";
+            modalProduct.textContent = "None";
+            modalTimeImport.textContent = "None";
+          }
+        });
+      }
+      */
+  </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyBgTphmEWTWoJ-5-j0R9jF4Z4dENtnr2xQ",
-    authDomain: "elevatornonetouch.firebaseapp.com",
-    databaseURL: "https://elevatornonetouch-default-rtdb.firebaseio.com",
-    projectId: "elevatornonetouch",
-    storageBucket: "elevatornonetouch.appspot.com",
-    messagingSenderId: "441651373398",
-    appId: "1:441651373398:web:1abe6281fb31338bad62f7",
-    measurementId: "G-KZ0F1G8CEN"
-  };
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBgTphmEWTWoJ-5-j0R9jF4Z4dENtnr2xQ",
+      authDomain: "elevatornonetouch.firebaseapp.com",
+      databaseURL: "https://elevatornonetouch-default-rtdb.firebaseio.com",
+      projectId: "elevatornonetouch",
+      storageBucket: "elevatornonetouch.appspot.com",
+      messagingSenderId: "441651373398",
+      appId: "1:441651373398:web:1abe6281fb31338bad62f7",
+      measurementId: "G-KZ0F1G8CEN"
+    };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
 
-    import { getDatabase, ref, set, get, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+    import { getDatabase, ref, set, get, child, update, remove, onValue }
+      from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
 
     const db = getDatabase();
-    //------------------------------------------------------------------------------------------------REFERENCES----------------------------------------------------------------
-    const btnUp = document.querySelector('.outside-button-up-normal');
-    const btnDown = document.querySelector('.outside-button-down-normal');
-    const btn3B = document.querySelector('.Cabin-button-3B-normal');
-    const btn3A = document.querySelector('.Cabin-button-3A-normal');
-    const btn2 = document.querySelector('.Cabin-button-2-normal');
-    const btnG = document.querySelector('.Cabin-button-G-normal');
-    const btnClose = document.querySelector('.Cabin-button-close-normal');
-    const btnOpen = document.querySelector('.Cabin-button-open-normal');
+
+    //--------------------------------------------------------------------------------------------------------References---------
+    //Normal button
+    const btnNormalUp = document.querySelector('.outside-button-up-normal');
+    const btnNormalDown = document.querySelector('.outside-button-down-normal');
+    const btnNormal3B = document.querySelector('.Cabin-button-3B-normal');
+    const btnNormal3A = document.querySelector('.Cabin-button-3A-normal');
+    const btnNormal2 = document.querySelector('.Cabin-button-2-normal');
+    const btnNormalG = document.querySelector('.Cabin-button-G-normal');
+    const btnNormalClose = document.querySelector('.Cabin-button-close-normal');
+    const btnNormalOpen = document.querySelector('.Cabin-button-open-normal');
+    // Clicked button
+    const btnClickedUp = document.querySelector('.outside-button-up-clicked');
+    const btnClickedDown = document.querySelector('.outside-button-down-clicked');
+    const btnClicked3B = document.querySelector('.Cabin-button-3B-clicked');
+    const btnClicked3A = document.querySelector('.Cabin-button-3A-clicked');
+    const btnClicked2 = document.querySelector('.Cabin-button-2-clicked');
+    const btnClickedG = document.querySelector('.Cabin-button-G-clicked');
+    const btnClickedClose = document.querySelector('.Cabin-button-close-clicked');
+    const btnClickedOpen = document.querySelector('.Cabin-button-open-clicked');
+    // Display
     const displayUp = document.querySelector('.outside-up-display');
     const displayDown = document.querySelector('.outside-down-display');
     const displayFloor = document.querySelector('.floor-display');
-    
+    const selectCurrentFloor = document.querySelector('.outside-floor-selector')
+
     var isOn; //true is ON
     var isOff; //false is OFF
     var isAuto; //true is AUTO
@@ -436,348 +868,143 @@
     var isGrequested; //true is people inside cabin call floor G
     var isGup; //true is Floor G call up
     var isOpenRequested; //true is people inside cabin call open door
-
-    //------------------------------------------------------------------------------------------------INSERT DATA FUNCTION--------------------------------
-    function InsertData() {
-      set(ref(db, "System/"), {
-        isOn: false, //true is ON false is OFF
-        isManual: false, //true is MANUAL false is AUTO
-        isImport: false, //true is IMPORT false is EXPORT
-        loadedA1: false, //true is LOADED false is FREE
-        loadedA2: false, //true is LOADED false is FREE
-        loadedA3: false, //true is LOADED false is FREE
-        loadedA4: false, //true is LOADED false is FREE
-        loadedA5: false, //true is LOADED false is FREE
-        loadedA6: false, //true is LOADED false is FREE
-        loadedA7: false, //true is LOADED false is FREE
-        loadedA8: false, //true is LOADED false is FREE
-        loadedA9: false, //true is LOADED false is FREE
-
-        loadedB1: false, //true is LOADED false is FREE
-        loadedB2: false, //true is LOADED false is FREE
-        loadedB3: false, //true is LOADED false is FREE
-        loadedB4: false, //true is LOADED false is FREE
-        loadedB5: false, //true is LOADED false is FREE
-        loadedB6: false, //true is LOADED false is FREE
-        loadedB7: false, //true is LOADED false is FREE
-        loadedB8: false, //true is LOADED false is FREE
-        loadedB9: false, //true is LOADED false is FREE
-      })
-        .then(() => {
-          alert("data stored successfully");
-        })
-        .catch((error) => {
-          alert("unsuccessfull, error" + error)
-        });
-    }
-    //-----------------------------------------------------------------------------------SELECT DATA FUNCTION--------------------------------
-    function SelectData() {
-      const dbref = ref(db);
-
-      get(child(dbref, "System/")).then((snapshot) => {
-        if (snapshot.exists()) {
-          var isOn = snapshot.val().TurnOn;
-        }
-        else {
-          alert("No data found");
-        }
-      })
-        .catch((error) => {
-          alert("unsuccessfull, error" + error);
-        });
-    }
-    //-----------------------------------------------------------------------------------UPDATE DATA FUNCTION--------------------------------
-    function UpdateData() {
-      update(ref(db, "System/"), {
-        isOn: true
-      })
-        .then(() => {
-          alert("Data updated successfully");
-        })
-        .catch((error) => {
-          alert("Unsuccessfull, error" + error)
-        });
-    }
-    //-----------------------------------------------------------------------------------DELETE DATA FUNCTION--------------------------------
-    function DeleteData() {
-      remove(ref(db, "System/"), {
-        TurnOn: true
-      })
-        .then(() => {
-          alert("Data removed successfully");
-        })
-        .catch((error) => {
-          alert("Unsuccessfull, error" + error)
-        });
-    }
-    //-----------------------------------------------------------------------------------CHANGE BUTTON--------------------------------
-
-    function changeOnOffButton() {
-      if (!!+isOff) {
-        btnTurnOnOff.textContent = 'Turn On';
-        btnTurnOnOff.classList.remove('btn-outline-danger');
-        btnTurnOnOff.classList.add('btn-outline-success');
-        txtPower.classList.remove('text-success');
-        txtPower.classList.add('text-danger');
-        txtPower.textContent = 'Off';
-        btnControlMode.disabled = true;
-        btnOperationMode.disabled = true;
-      } else if (!!+isOn) {
-        btnTurnOnOff.textContent = 'Turn Off';
-        btnTurnOnOff.classList.remove('btn-outline-success');
-        btnTurnOnOff.classList.add('btn-outline-danger');
-        txtPower.classList.remove('text-danger');
-        txtPower.classList.add('text-success');
-        txtPower.textContent = 'On';
-        btnControlMode.disabled = false;
-        btnOperationMode.disabled = false;
+    //--------------------------------------------------------------------------------------------------------Change Button Function---------
+    function change3BButton() {
+      if (!!+is3Brequested) {
+        btnNormal3B.style.display = "none";
+        btnClicked3B.style.display = "block";
       } else {
-        btnTurnOnOff.textContent = 'Turn On';
-        btnTurnOnOff.classList.remove('btn-outline-danger');
-        btnTurnOnOff.classList.add('btn-outline-success');
-        txtPower.classList.remove('text-success');
-        txtPower.classList.add('text-danger');
-        txtPower.textContent = 'No Active';
-        btnControlMode.disabled = true;
-        btnOperationMode.disabled = true;
+        btnNormal3B.style.display = "block";
+        btnClicked3B.style.display = "none";
       }
     }
-    function changeAutoManualMode() {
-      if (!!+isManual) {
-        btnControlMode.textContent = 'Change to Auto';
-        btnControlMode.classList.remove('btn-outline-danger');
-        btnControlMode.classList.add('btn-outline-success');
-        txtControlMode.textContent = 'Manual';
-      } else if (!!+isAuto) {
-        btnControlMode.textContent = 'Change to Manual';
-        btnControlMode.classList.remove('btn-outline-success');
-        btnControlMode.classList.add('btn-outline-danger');
-        txtControlMode.textContent = 'Auto';
+    function change3AButton() {
+      if (!!+is3Arequested) {
+        btnNormal3A.style.display = "none";
+        btnClicked3A.style.display = "block";
       } else {
-        btnControlMode.textContent = 'Change to Auto';
-        btnControlMode.classList.remove('btn-outline-danger');
-        btnControlMode.classList.add('btn-outline-success');
-        txtControlMode.textContent = 'No Active';
+        btnNormal3A.style.display = "block";
+        btnClicked3A.style.display = "none";
       }
     }
-    function changeImportExport() {
-      if (!!+isExport) {
-        btnOperationMode.textContent = 'Change to Import';
-        btnOperationMode.classList.remove('btn-outline-danger');
-        btnOperationMode.classList.add('btn-outline-success');
-        txtOperationMode.textContent = 'Export';
-      } else if (!!+isImport) {
-        btnOperationMode.textContent = 'Change to Export';
-        btnOperationMode.classList.remove('btn-outline-success');
-        btnOperationMode.classList.add('btn-outline-danger');
-        txtOperationMode.textContent = 'Import';
+    function change2Button() {
+      if (!!+is2requested) {
+        btnNormal2.style.display = "none";
+        btnClicked2.style.display = "block";
       } else {
-        btnOperationMode.textContent = 'Change to Import';
-        btnOperationMode.classList.remove('btn-outline-danger');
-        btnOperationMode.classList.add('btn-outline-success');
-        txtOperationMode.textContent = 'No Active';
+        btnNormal2.style.display = "block";
+        btnClicked2.style.display = "none";
       }
     }
-    function changeLoadPlace() {
-      var chartLoaded = 0;
-      var chartFree = 18;
-      var chartExpired = 0;
-      for (let i = 0; i < 18; i++) {
-        if (!!+loadedPositions[i]) {
-          document.querySelector(".box-pos-" + String(i + 1)).style.opacity = "1";
-          tooltipBarcodePosition[i].textContent = String(barcodePositions[i]);
-          chartLoaded++;
-          chartFree = 18 - chartLoaded;
-          chartChangeValue(chartLoaded, chartFree, chartExpired);
-          switch (barcodePositions[i]) {
-            case "1101199916":
-              placeDataBarcode[i].textContent = "8931101199916";
-              placeDataProduct[i].textContent = productName[0];
-              placeDataStatus[i].textContent = "Loaded";
-
-              break;
-            case "1101199923":
-              placeDataBarcode[i].textContent = "8931101199923";
-              placeDataProduct[i].textContent = productName[1];
-              placeDataStatus[i].textContent = "Loaded";
-              break;
-            case "1101199930":
-              placeDataBarcode[i].textContent = "8931101199930";
-              placeDataProduct[i].textContent = productName[2];
-              placeDataStatus[i].textContent = "Loaded";
-              break;
-            case "1101199947":
-              placeDataBarcode[i].textContent = "8931101199947";
-              placeDataProduct[i].textContent = productName[3];
-              placeDataStatus[i].textContent = "Loaded";
-              break;
-            default:
-              break;
-          }
-          placeDataStatus[i].classList.remove('bg-success');
-          placeDataStatus[i].classList.add('bg-warning');
-        } else {
-          tooltipBarcodePosition[i].textContent = "Emty";
-          //placeDataBarcode[i].innerHTML = '-';
-          // placeDataProduct[i].textContent = '-';
-          // placeDataStatus[i].textContent = "Free";
-          // placeDataStatus[i].classList.remove('bg-warning');
-          // placeDataStatus[i].classList.remove('bg-danger');
-          // placeDataStatus[i].classList.add('bg-success');
-        }
+    function changeGButton() {
+      if (!!+isGrequested) {
+        btnNormalG.style.display = "none";
+        btnClickedG.style.display = "block";
+      } else {
+        btnNormalG.style.display = "block";
+        btnClickedG.style.display = "none";
       }
     }
-
-    function chartChangeValue(chartLoaded, chartFree, chartExpired) {
-      echarts.init(document.querySelector("#trafficChart")).setOption({
-        tooltip: {
-          trigger: 'item'
-        },
-        legend: {
-          top: '5%',
-          left: 'center'
-        },
-        series: [{
-          name: 'Number of',
-          type: 'pie',
-          radius: ['40%', '70%'],
-          avoidLabelOverlap: false,
-          label: {
-            show: false,
-            name: '50% used',
-            position: 'center'
-          },
-          emphasis: {
-            label: {
-              show: true,
-              fontSize: '18',
-              fontWeight: 'bold'
-            }
-          },
-          labelLine: {
-            show: false,
-            name: 'qewrty'
-          },
-          data: [{
-            value: Number(chartLoaded),
-            name: 'Location used'
-          },
-          {
-            value: Number(chartFree),
-            name: 'Location free'
-          },
-          {
-            value: 0,
-            name: 'Expiring product'
-          },
-          {
-            value: Number(chartExpired),
-            name: 'Expired product'
-          },
-
-          ]
-        }]
-      });
-    }
-    //-----------------------------------------------------------------------------------MY FUNCTION--------------------------------
-
-    function UpdateIsOn() {
-      if (!(!!+isOn) && (!!+isOff)) {
-        update(ref(db, "System/"), {
-          statusClick: "1",
-          isOn: "1",
-          isOff: "0",
-        })
-          .then(() => {
-            alert("Data updated successfully");
-          })
-          .catch((error) => {
-            alert("Unsuccessfull, error" + error)
-          });
-      }
-      else if ((!!+isOn) && !(!!+isOff)) {
-        update(ref(db, "System/"), {
-          statusClick: "1",
-          isOn: "0",
-          isOff: "1",
-        })
-          .then(() => {
-            alert("Data updated successfully");
-          })
-          .catch((error) => {
-            alert("Unsuccessfull, error" + error)
-          });
+    function changeCloseDoorButton() {
+      if (!!+isCloseRequested) {
+        btnNormalClose.style.display = "none";
+        btnClickedClose.style.display = "block";
+      } else {
+        btnNormalClose.style.display = "block";
+        btnClickedClose.style.display = "none";
       }
     }
-    function UpdateIsManual() {
-      if (!(!!+isAuto) && (!!+isManual)) {
-        update(ref(db, "System/"), {
-          statusClick: "1",
-          isAuto: "1",
-          isManual: "0",
-        })
-          .then(() => {
-            alert("Data updated successfully");
-          })
-          .catch((error) => {
-            alert("Unsuccessfull, error" + error)
-          });
-      }
-      else if ((!!+isAuto) && !(!!+isManual)) {
-        update(ref(db, "System/"), {
-          statusClick: "1",
-          isAuto: "0",
-          isManual: "1",
-        })
-          .then(() => {
-            alert("Data updated successfully");
-          })
-          .catch((error) => {
-            alert("Unsuccessfull, error" + error)
-          });
+    function changeOpenDoorButton() {
+      if (!!+isOpenRequested) {
+        btnNormalOpen.style.display = "none";
+        btnClickedOpen.style.display = "block";
+      } else {
+        btnNormalOpen.style.display = "block";
+        btnClickedOpen.style.display = "none";
       }
     }
-    function UpdateIsImport() {
-      if (!(!!+isImport) && (!!+isExport)) {
-        update(ref(db, "System/"), {
-          statusClick: "1",
-          isImport: "1",
-          isExport: "0",
-        })
-          .then(() => {
-            alert("Data updated successfully");
-          })
-          .catch((error) => {
-            alert("Unsuccessfull, error" + error)
-          });
-      }
-      else if ((!!+isImport) && !(!!+isExport)) {
-        update(ref(db, "System/"), {
-          statusClick: "1",
-          isImport: "0",
-          isExport: "1",
-        })
-          .then(() => {
-            alert("Data updated successfully");
-          })
-          .catch((error) => {
-            alert("Unsuccessfull, error" + error)
-          });
+    function changeUpButton(value) {
+      if (!!+value) {
+        btnNormalUp.style.display = "none";
+        btnClickedUp.style.display = "block";
+      } else {
+        btnNormalUp.style.display = "block";
+        btnClickedUp.style.display = "none";
       }
     }
-    function onloadFunction() {
-      var chartLoaded = 0;
-      var chartFree = 18;
-      var chartExpired = 0;
-      for (var i = 0; i < 18; i++) {
-        if (!!+loadedPositions[i]) {
-          chartLoaded++;
-          chartFree = 18 - chartLoaded;
-        }
+    function changeDownButton(value) {
+      if (!!+value) {
+        btnNormalDown.style.display = "none";
+        btnClickedDown.style.display = "block";
+      } else {
+        btnNormalDown.style.display = "block";
+        btnClickedDown.style.display = "none";
       }
-      chartChangeValue(chartLoaded, chartFree, chartExpired);
     }
-    //-----------------------------------------------------------------------------------READ DATA--------------------------------
+    function changeFloorCurrent(value) {
+      switch (value) {
+        case 0:
+          displayFloor.textContent = "OF";
+          break;
+        case 1:
+          displayFloor.textContent = "G";
+          break;
+        case 2:
+          displayFloor.textContent = "2";
+          break;
+        case 3:
+          displayFloor.textContent = "3A";
+          break;
+        case 4:
+          displayFloor.textContent = "3B";
+          break;
+        case 10:
+          displayFloor.textContent = "Ma";
+          break;
+        default:
+          displayFloor.textContent = "Er";
+          break;
+      }
+    }
+    function changeUpDownButton() {
+      switch (selectCurrentFloor.value) {
+        case "G":
+          btnNormalDown.style.display = "none";
+          btnNormalUp.style.display = "block";
+          changeUpButton(isGup);
+          break;
+        case "2":
+          btnNormalDown.style.display = "block";
+          btnNormalUp.style.display = "block";
+          changeUpButton(is2up);
+          changeDownButton(is2down);
+          break;
+        case "3A":
+          btnNormalDown.style.display = "block";
+          btnNormalUp.style.display = "block";
+          changeUpButton(is3Aup);
+          changeDownButton(is3Adown);
+          break;
+        case "3B":
+          btnNormalDown.style.display = "block";
+          btnNormalUp.style.display = "none";
+          changeDownButton(is3Bdown);
+          break;
+      }
+    }
+    function changeUpDownDisplay() {
+      if (!!+cabinDirectUp) {
+        displayUp.style.display = "block";
+        displayDown.style.display = "none";
+      } else if(!!+cabinDirectDown) {
+        displayUp.style.display = "none";
+        displayDown.style.display = "block";
+      }else{
+        displayUp.style.display = "none";
+        displayDown.style.display = "none";
+      }
+    }
+    //--------------------------------------------------------------------------------------------------------Read Data Realtime---------
     const SystemRef = ref(db, 'System/');
 
     onValue(SystemRef, (snapshot) => {
@@ -785,8 +1012,6 @@
       isOff = snapshot.val().isOff;
       isAuto = snapshot.val().isAuto;
       isManual = snapshot.val().isManual;
-      isImport = snapshot.val().isImport;
-      isExport = snapshot.val().isExport;
       statusClick = snapshot.val().statusClick;
       cabinDirectDown = snapshot.val().cabinDirectDown; //true is moving down action of cabin
       cabinDirectUp = snapshot.val().cabinDirectUp; //true is moving up action of cabin
@@ -803,59 +1028,18 @@
       isGrequested = snapshot.val().isGrequested; //true is people inside cabin call floor G
       isGup = snapshot.val().isGup; //true is Floor G call up
       isOpenRequested = snapshot.val().isOpenRequested; //true is people inside cabin call open door
-      changeOnOffButton();
-      changeAutoManualMode();
-      changeImportExport();
-      changeLoadPlace();
+      change3BButton();
+      change3AButton();
+      change2Button();
+      changeGButton();
+      changeCloseDoorButton();
+      changeOpenDoorButton();
+      changeFloorCurrent(currentFloor);
+      changeUpDownButton();
+      changeUpDownDisplay();
     });
-
-    // const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    // const d = new Date();
-    // function GetAllDataOnce() {
-    //   const WarehouseRef = ref(db, 'Warehouse/2022/May/12/');
-    //   var dataWarehouse;
-    //   get(child(WarehouseRef)).then((snapshot)=>{
-    //     var warehouse = [];
-
-    //     snapshot.forEach((childSnapshot)=>{
-    //       warehouse.push(childSnapshot.val());
-    //     });
-    //   });
-    // }
-    //window.onload = GetAllDataOnce;
-    //-----------------------------------------------------------------------------------Assign Events--------------------------------
-    btnTurnOnOff.addEventListener('click', UpdateIsOn);
-    btnControlMode.addEventListener('click', UpdateIsManual);
-    btnOperationMode.addEventListener('click', UpdateIsImport);
-    for (var i = 0; i < 9; i++) {
-      boxPositions[i].addEventListener('click', () => {
-        modalPosition.textContent = "A" + String(i + 1);
-        if (!!+loadedPositions[i]) {
-          modalBarcode.textContent = barcodePositions[i];
-          modalProduct.textContent = "None";
-          modalTimeImport.textContent = "None";
-        } else {
-          modalBarcode.textContent = "None";
-          modalProduct.textContent = "None";
-          modalTimeImport.textContent = "None";
-        }
-      });
-    }
-    for (var i = 9; i < 17; i++) {
-      boxPositions[i].addEventListener('click', () => {
-        modalPosition.textContent = "B" + String(i - 8);
-        if (!!+loadedPositions[i]) {
-          modalBarcode.textContent = barcodePositions[i];
-          modalProduct.textContent = "None";
-          modalTimeImport.textContent = "None";
-        } else {
-          modalBarcode.textContent = "None";
-          modalProduct.textContent = "None";
-          modalTimeImport.textContent = "None";
-        }
-      });
-    }
+    //--------------------------------------------------------------------------------------------------------Read Data Realtime---------
+    selectCurrentFloor.addEventListener('change', changeUpDownButton);
   </script>
 </body>
-
 </html>
