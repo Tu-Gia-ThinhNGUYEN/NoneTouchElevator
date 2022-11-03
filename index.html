@@ -182,11 +182,11 @@
                         </div>
                       </div>
                       <!-- Modal -->
-                      <div class="modal fade" id="verticalycentered" tabindex="-1">
+                      <div class="modal-verify-window modal fade" id="verticalycentered" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title">Verify action</h5>
+                              <h5 class="modal-title modal-title-outside">Verify Action</h5>
                               <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                             </div>
@@ -198,12 +198,12 @@
                                 <img src="./img/web_displayHMIview.jpg" alt="" style="max-width: 350px;">
                               </div>
                               <div style="line-height: 1rem;"><br></div>
-                              <input type="number" placeholder="Verify code" class="form-control"
+                              <input type="text" placeholder="Verify code" class="form-control modal-verify-code"
                                 style="align-items: center;">
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                              <button type="button" class="btn btn-danger">Apply</button>
+                              <button type="button" class="btn btn-secondary modal-cancel-button" data-bs-dismiss="modal">Cancel</button>
+                              <button type="button" class="btn btn-danger modal-confirm-button">Confirm</button>
                             </div>
                           </div>
                         </div>
@@ -218,6 +218,7 @@
               <div class="card recent-sales overflow-auto">
                 <div class="card-body">
                   <h5 class="card-title">Inside Cabin<span>| Control Panel</span></h5>
+                  <div style="line-height: 35px;"><br></div>
                   <!-- Cabin button row 1 -->
                   <div class="row justify-content-center">
                     <div class="col-4 justify-content-center align-items-center" class="Cabin-button"
@@ -285,11 +286,11 @@
                   </div>
                   <!-- End of Cabin button row 3 -->
                   <!-- Modal -->
-                  <div class="modal fade" id="verticalycentered-cabin" tabindex="-1">
+                  <div class="modal-verify-window-cabin modal fade" id="verticalycentered-cabin" tabindex="-1" style="display: none;" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title">Verify action</h5>
+                          <h5 class="modal-title modal-title-cabin">Verify action</h5>
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -300,12 +301,11 @@
                             <img src="./img/web_displayHMIview.jpg" alt="" style="max-width: 350px;">
                           </div>
                           <div style="line-height: 1rem;"><br></div>
-                          <input type="number" placeholder="Verify code" class="form-control"
-                            style="align-items: center;">
+                          <input type="text" placeholder="Verify code" class="modal-verify-code-cabin form-control" style="align-items: center;">
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                          <button type="button" class="btn btn-danger">Apply</button>
+                          <button type="button" class="modal-cancel-cabin btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                          <button type="button" class="modal-confirm-cabin btn btn-danger">Confirm</button>
                         </div>
                       </div>
                     </div>
@@ -313,6 +313,38 @@
                 </div>
               </div>
             </div><!-- End Inside Cabin -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dashboard">
+      <div class="row">
+        <!-- Left side columns -->
+        <div class="col-lg">
+          <div class="row">
+            <!-- Map -->
+            <div class="col-lg-6">
+              <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+                  <h5 class="card-title">Map<span>| Current Floor</span></h5>
+                  <div class="row">
+                    <img src="./img/HCMUTE_map.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- Map -->
+            <!-- Information -->
+            <div class="col-lg-6">
+              <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+                  <h5 class="card-title">Information<span>| Brand</span></h5>
+                  <div class="row">
+                    <img src="./img/HCMUTE_map.svg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div><!-- Information -->
           </div>
         </div>
       </div>
@@ -373,13 +405,13 @@
         </div>
       </div>
     </section>
-    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show" role="alert"
-      style="display: none; position: fixed; right: 0%; bottom: 62px; z-index: 10000; width: 259.19px;">
+    <div class="alert alert-success bg-success text-light border-0 alert-dismissible fade show alert-verify-success" role="alert"
+      style="display: none; position: fixed; right: 0%; top: 5px; z-index: 10000; width: 259.19px;">
       <span>The action was successful!</span>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert"
-      style="display: none; position: fixed; right: 0%; bottom: 62px; z-index: 10000; width: 259.19px;">
+    <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show alert-verify-fail" role="alert"
+      style="display: none; position: fixed; right: 0%; top: 5px; z-index: 10000; width: 259.19px;">
       <span>The action was fail!</span>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -846,7 +878,23 @@
     const displayUp = document.querySelector('.outside-up-display');
     const displayDown = document.querySelector('.outside-down-display');
     const displayFloor = document.querySelector('.floor-display');
-    const selectCurrentFloor = document.querySelector('.outside-floor-selector')
+    const selectCurrentFloor = document.querySelector('.outside-floor-selector');
+    // Modal
+    const btnCancel = document.querySelector('.modal-cancel-button');
+    const btnConfirm = document.querySelector('.modal-confirm-button');
+    const inputVerifyCode = document.querySelector('.modal-verify-code');
+    const modelWindow = document.querySelector('.modal-verify-window');
+
+    const btnCancelCabin = document.querySelector('.modal-cancel-cabin');
+    const btnConfirmCabin = document.querySelector('.modal-confirm-cabin');
+    const inputVerifyCodeCabin = document.querySelector('.modal-verify-code-cabin');
+    const modelWindowCabin = document.querySelector('.modal-verify-window-cabin');
+
+    const titleModalOutside = document.querySelector('.modal-title-cabin');
+    const titleModalCabin = document.querySelector('.modal-title-outside')
+    // Alert
+    const alertSuccess = document.querySelector('.alert-verify-success');
+    const alertFail = document.querySelector('.alert-verify-fail');
 
     var isOn; //true is ON
     var isOff; //false is OFF
@@ -868,6 +916,17 @@
     var isGrequested; //true is people inside cabin call floor G
     var isGup; //true is Floor G call up
     var isOpenRequested; //true is people inside cabin call open door
+    //Verify Modal display
+    var statusUp;
+    var statusDown;
+    var status3B;
+    var status3A;
+    var status2;
+    var statusG;
+    var statusClose;
+    var statusOpen;
+    var NodeCode;
+    var NodeCodeCabin;
     //--------------------------------------------------------------------------------------------------------Change Button Function---------
     function change3BButton() {
       if (!!+is3Brequested) {
@@ -1004,6 +1063,232 @@
         displayDown.style.display = "none";
       }
     }
+    //--------------------------------------------------------------------------------------------------------Call Button Function-------
+    function readNodeCode()
+    {
+      const dbref = ref(db);
+        get(child(dbref, "Verify/")).then((snapshot) => {
+          if (snapshot.exists()) {
+            switch (selectCurrentFloor.value) {
+              case "G":
+                NodeCode = snapshot.val().NodeCodeG;
+                break;
+              case "2":
+                NodeCode = snapshot.val().NodeCode2;
+                break;
+              case "3A":
+                NodeCode = snapshot.val().NodeCode3A;
+                break;
+              case "3B":
+                NodeCode = snapshot.val().NodeCode3B;
+                break;
+              }
+            }
+            else {
+              alert("No data found");
+            }
+          })
+          .catch((error) => {
+            alert("unsuccessfull, error" + error);
+          });
+    }
+    function readNodeCodeCabin()
+    {
+      const dbref = ref(db);
+        get(child(dbref, "Verify/")).then((snapshot) => {
+          if (snapshot.exists()) {
+            NodeCodeCabin = snapshot.val().NodeCodeCabin;
+          }
+          else {
+            alert("No data found");
+          }
+        })
+          .catch((error) => {
+            alert("unsuccessfull, error" + error);
+          });
+    }
+    function callUpButton()
+    {
+      titleModalOutside.textContent = "Verify Call Up Action";
+      switch (selectCurrentFloor.value) {
+        case "G":
+          update(ref(db, "Requested/"), {CallGup: "1"});
+          break;
+        case "2":
+          update(ref(db, "Requested/"), {Call2up: "1"});
+          break;
+        case "3A":
+          update(ref(db, "Requested/"), {Call3Aup: "1"});
+          break;
+      }
+      statusUp = 1;
+      statusDown = 0;
+      readNodeCode();
+    }
+    function callDownButton()
+    {
+      titleModalOutside.textContent = "Verify Call Down Action";
+      switch (selectCurrentFloor.value) {
+        case "2":
+          update(ref(db, "Requested/"), {Call2down: "1"});
+          break;
+        case "3A":
+          update(ref(db, "Requested/"), {Call3Adown: "1"});
+          break;
+        case "3B":
+          update(ref(db, "Requested/"), {Call3Bdown: "1"});
+          break;
+      }
+      statusUp = 0;
+      statusDown = 1;
+      readNodeCode();
+    }
+    function cancelUpButton()
+    {
+      switch (selectCurrentFloor.value) {
+        case "G":
+          update(ref(db, "Requested/"), {CallGup: "0"});
+          break;
+        case "2":
+          update(ref(db, "Requested/"), {Call2up: "0"});
+          break;
+        case "3A":
+          update(ref(db, "Requested/"), {Call3Aup: "0"});
+          break;
+      }
+      statusUp = 0;
+      statusDown = 0;
+    }
+    function cancelDownButton()
+    {
+      switch (selectCurrentFloor.value) {
+        case "2":
+          update(ref(db, "Requested/"), {Call2down: "0"});
+          break;
+        case "3A":
+          update(ref(db, "Requested/"), {Call3Adown: "0"});
+          break;
+        case "3B":
+          update(ref(db, "Requested/"), {Call3Bdown: "0"});
+          break;
+      }
+      statusUp = 0;
+      statusDown = 0;
+    }
+    function verifyCode()
+    {
+        if (NodeCode == inputVerifyCode.value)
+        {
+          alert("Call successfully!");
+          btnCancel.click();
+          alertSuccess.style.display = "block";
+          alertFail.style.display = "none";
+        }else{
+          alertSuccess.style.display = "none";
+          alertFail.style.display = "block";
+        }
+        switch (selectCurrentFloor.value) {
+        case "G":
+          update(ref(db, "Requested/"), {WebCodeG: inputVerifyCode.value});
+          break;
+        case "2":
+          update(ref(db, "Requested/"), {WebCode2: inputVerifyCode.value});
+          break;
+        case "3A":
+          update(ref(db, "Requested/"), {WebCode3A: inputVerifyCode.value});
+          break;
+        case "3B":
+          update(ref(db, "Requested/"), {WebCode3B: inputVerifyCode.value});
+          break;
+      }
+    }
+    function call3BButton()
+    {
+      titleModalCabin.textContent = "Verify Call 3B Action";
+      update(ref(db, "Requested/"), {Call3Brequested: "1"});
+      status3B = 1;
+      readNodeCodeCabin();
+    }
+    function call3AButton()
+    {
+      titleModalCabin.textContent = "Verify Call 3A Action";
+      update(ref(db, "Requested/"), {Call3Arequested: "1"});
+      status3A = 1;
+      readNodeCodeCabin();
+    }
+    function call2Button()
+    {
+      titleModalCabin.textContent = "Verify Call 2 Action";
+      update(ref(db, "Requested/"), {Call2requested: "1"});
+      status2 = 1;
+      readNodeCodeCabin();
+    }
+    function callGButton()
+    {
+      titleModalCabin.textContent = "Verify Call G Action";
+      update(ref(db, "Requested/"), {CallGrequested: "1"});
+      statusG = 1;
+      readNodeCodeCabin();
+    }
+    function callCloseButton()
+    {
+      titleModalCabin.textContent = "Verify Call Close Action";
+      update(ref(db, "Requested/"), {CallCloseRequested: "1"});
+      statusClose = 1;
+      readNodeCodeCabin();
+    }
+    function callOpenButton()
+    {
+      titleModalCabin.textContent = "Verify Call Open Action";
+      update(ref(db, "Requested/"), {CallOpenRequested: "1"});
+      statusOpen = 1;
+      readNodeCodeCabin();
+    }
+    function cancel3BButton()
+    {
+      update(ref(db, "Requested/"), {Call3Brequested: "0"});
+      status3B = 0;
+    }
+    function cancel3AButton()
+    {
+      update(ref(db, "Requested/"), {Call3Arequested: "0"});
+      status3A = 0;
+    }
+    function cancel2Button()
+    {
+      update(ref(db, "Requested/"), {Call2requested: "0"});
+      status2 = 0;
+    }
+    function cancelGButton()
+    {
+      update(ref(db, "Requested/"), {CallGrequested: "0"});
+      statusG = 0;
+    }
+    function cancelCloseButton()
+    {
+      update(ref(db, "Requested/"), {CallCloseRequested: "0"});
+      statusClose = 0;
+    }
+    function cancelOpenButton()
+    {
+      update(ref(db, "Requested/"), {CallOpenRequested: "0"});
+      statusOpen = 0;
+    }
+    function verifyCodeCabin()
+    {
+      console.log(NodeCodeCabin);
+      if (NodeCodeCabin == inputVerifyCodeCabin.value)
+        {
+          alert("Call successfully!");
+          btnCancelCabin.click();
+          alertSuccess.style.display = "block";
+          alertFail.style.display = "none";
+        }else{
+          alertSuccess.style.display = "none";
+          alertFail.style.display = "block";
+        }
+      update(ref(db, "Requested/"), {WebCodeCabin: inputVerifyCode.value});
+    }
     //--------------------------------------------------------------------------------------------------------Read Data Realtime---------
     const SystemRef = ref(db, 'System/');
 
@@ -1039,7 +1324,97 @@
       changeUpDownDisplay();
     });
     //--------------------------------------------------------------------------------------------------------Read Data Realtime---------
+    //Outside Cabin
     selectCurrentFloor.addEventListener('change', changeUpDownButton);
+    btnNormalUp.addEventListener('click', callUpButton);
+    btnNormalDown.addEventListener('click', callDownButton);
+    btnCancel.addEventListener('click', ()=>{
+      if ((!!+statusUp) && !(!!+statusDown))
+      {
+        cancelUpButton();
+      }
+      else if(!(!!+statusUp) && (!!+statusDown))
+      {
+        cancelDownButton();
+      }
+    });
+    var observer = new MutationObserver(function(){
+      if(modelWindow.style.display == 'none'){
+        if ((!!+statusUp) && !(!!+statusDown))
+        {
+          cancelUpButton();
+        }
+        else if(!(!!+statusUp) && (!!+statusDown))
+        {
+          cancelDownButton();
+        }
+      }
+    });
+    observer.observe(modelWindow, { attributes: true, childList: true });
+    btnConfirm.addEventListener('click', verifyCode);
+    // Inside cabin
+    btnNormal3B.addEventListener('click', call3BButton);
+    btnNormal3A.addEventListener('click', call3AButton);
+    btnNormal2.addEventListener('click', call2Button);
+    btnNormalG.addEventListener('click', callGButton);
+    btnNormalClose.addEventListener('click', callCloseButton);
+    btnNormalOpen.addEventListener('click', callOpenButton);
+    btnCancelCabin.addEventListener('click', ()=>{
+      if (!!+status3B)
+      {
+        cancel3BButton();
+      }
+      if (!!+status3A)
+      {
+        cancel3AButton();
+      }
+      if (!!+status2)
+      {
+        cancel2Button();
+      }
+      if (!!+statusG)
+      {
+        cancelGButton();
+      }
+      if (!!+statusClose)
+      {
+        cancelCloseButton();
+      }
+      if (!!+statusOpen)
+      {
+        cancelOpenButton();
+      }
+    });
+    var observerCabin = new MutationObserver(function(){
+      if(modelWindowCabin.style.display == 'none'){
+        if (!!+status3B)
+      {
+        cancel3BButton();
+      }
+      if (!!+status3A)
+      {
+        cancel3AButton();
+      }
+      if (!!+status2)
+      {
+        cancel2Button();
+      }
+      if (!!+statusG)
+      {
+        cancelGButton();
+      }
+      if (!!+statusClose)
+      {
+        cancelCloseButton();
+      }
+      if (!!+statusOpen)
+      {
+        cancelOpenButton();
+      }
+      }
+    });
+    observerCabin.observe(modelWindowCabin, { attributes: true, childList: true });
+    btnConfirmCabin.addEventListener('click', verifyCodeCabin);
   </script>
 </body>
 </html>
